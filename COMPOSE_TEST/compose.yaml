@@ -1,0 +1,13 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: compose_web
+    ports:
+      - "8080:80"
+
+  client:
+    image: alpine:3.20
+    container_name: compose_client
+    command: ["sh", "-c", "tail -f /dev/null"]
+    depends_on:
+      - web
