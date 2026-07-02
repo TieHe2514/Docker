@@ -97,3 +97,23 @@ client：运行 alpine，用来测试访问 web 容器
 4. docker compose ps 查看服务
 5. 打开浏览器http://localhost:8080，显示Nginx 欢迎页面
 6. 执行docker compose exec client wget -qO- http://web ，出现HTMl页面，说明容器间可以互相访问
+## docker参数交叉命令组合
+- 创建新容器：用 docker run 参数
+- 进入已有容器：用 docker exec 参数
+- 查看容器：用 docker ps 参数
+- 启动旧容器：用 docker start 参数
+- 看日志：用 docker logs 参数
+---
+- -i	--interactive	保持标准输入打开，方便你输入命令
+- -t	--tty	分配一个终端界面，让 bash 看起来像正常终端
+- -it	-i -t	常一起用，表示交互式进入容器
+- -d	--detach	后台运行容器
+- -dit	-d -i -t	后台运行，同时保留交互终端能力
+- --name	--name 容器名	给容器起名字，方便后续操作
+- -p	--publish	端口映射，例如 -p 8080:80
+- -v	--volume	挂载目录或数据卷
+- --rm	--rm	容器退出后自动删除
+- -e	--env	设置环境变量
+- --restart	--restart 策略	设置容器自动重启策略
+- --network	--network 网络名	指定容器使用的网络
+docker的参数很多，可以现查现用
